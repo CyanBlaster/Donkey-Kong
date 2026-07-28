@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cus0m3f3j0myg"]
+
+[ext_resource type="Script" uid="uid://j7xy38wbug8p" path="res://jumpman.gd" id="1_jtukp"]
+[ext_resource type="Texture2D" uid="uid://kummq3q48mge" path="res://Sprites/mario.png" id="1_oooar"]
+
+[sub_resource type="Animation" id="Animation_jtukp"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 5, 15, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_cqwig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 5, 15, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0siin"]
+_data = {
+&"Idle": SubResource("Animation_jtukp"),
+&"RESET": SubResource("Animation_cqwig")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oooar"]
+radius = 11.0
+height = 36.0
+
+[node name="Jumpman" type="CharacterBody2D" unique_id=1689911411]
+script = ExtResource("1_jtukp")
+
+[node name="Animator" type="Node2D" parent="." unique_id=84220609]
+
+[node name="Sprite2D" type="Sprite2D" parent="Animator" unique_id=1962364904]
+position = Vector2(-9.536743e-07, -9.536743e-07)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("1_oooar")
+region_enabled = true
+region_rect = Rect2(0, 5, 15, 20)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animator" unique_id=517604246]
+libraries/ = SubResource("AnimationLibrary_0siin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=302275046]
+position = Vector2(3, 0)
+shape = SubResource("CapsuleShape2D_oooar")

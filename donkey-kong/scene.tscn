@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1htdaty2ftl3"]
+
+[ext_resource type="PackedScene" uid="uid://3kondjpcihjo" path="res://platform.tscn" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://deadn31hmrrti" path="res://platform_2.tscn" id="2_nxogm"]
+[ext_resource type="PackedScene" uid="uid://cus0m3f3j0myg" path="res://jumpman.tscn" id="3_3253y"]
+
+[node name="Node2D" type="Node2D" unique_id=1630680808]
+
+[node name="platform2" parent="." unique_id=849119832 instance=ExtResource("1_ulcgi")]
+position = Vector2(-106, 327)
+
+[node name="platform1" parent="." unique_id=797786828 instance=ExtResource("2_nxogm")]
+position = Vector2(135, 455)
+
+[node name="platform4" parent="." unique_id=306519899 instance=ExtResource("1_ulcgi")]
+position = Vector2(-211, 55)
+
+[node name="platform3" parent="." unique_id=227800817 instance=ExtResource("2_nxogm")]
+position = Vector2(411, 191)
+
+[node name="Jumpman" parent="." unique_id=1689911411 instance=ExtResource("3_3253y")]
+position = Vector2(64, 531)
